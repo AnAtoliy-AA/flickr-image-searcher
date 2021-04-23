@@ -4,7 +4,7 @@ import CloudIcon from "@material-ui/icons/Cloud";
 import BookmarksIcon from "@material-ui/icons/Bookmarks";
 
 const SideBar: React.FC = () => (
-  <div>
+  <div className="SideBar">
     SideBar Component
     <NavLink to="/" style={{ textDecoration: "none" }}>
       {<CloudIcon />}

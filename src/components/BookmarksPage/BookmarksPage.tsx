@@ -1,9 +1,11 @@
 import React from 'react';
-
+import ImagesContainer from '../ImagesContainer/ImagesContainer';
+import './BookmarksPage.scss';
 
 const BookmarksPage: React.FC = () => (
-  <div>
+  <div className="BookmarksPage">
     BookmarksPage Component
+    <ImagesContainer />
   </div>
 );
 

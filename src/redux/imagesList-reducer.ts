@@ -4,7 +4,9 @@ enum ACTION_CONST {
   SET_IMAGES_INFO = "SET_IMAGES_INFO",
 }
 
-let initialState = {};
+let initialState = {
+  imagesInfoList: {}
+};
 
 const imagesListReducer = (state = initialState, action: any) => {
   switch (action.type) {
@@ -21,10 +23,10 @@ export const setImagesInfoData = (imagesInfoList: any) => ({
   imagesInfoList,
 });
 
-export const getImagesByNameInfo = (imageName: string) => async (
+export const getImagesByNameInfo = (imageName: string, pageNumber: number) => async (
   dispatch: (arg0: { type: string; imagesInfoList: any }) => void
 ) => {
-  const response = await imageAppApi.getImagesByName(imageName);
+  const response = await imageAppApi.getImagesByName(imageName, pageNumber);
 
     dispatch(setImagesInfoData(response.photos));
 };
