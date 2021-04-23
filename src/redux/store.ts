@@ -3,8 +3,10 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import searchFormReducer from "./searchForm-reducer";
 import thunkMiddleware from "redux-thunk";
+import imagesListReducer from "./imagesList-reducer";
 
 let reducers = combineReducers({
+  imagesList: imagesListReducer,
   searchForm: searchFormReducer,
 });
 
