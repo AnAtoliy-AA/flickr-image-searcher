@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useDebounce from "../../hooks/useDebounce";
 import { getImagesByNameInfo } from "../../redux/imagesList-reducer";
+import { setSearchFormTerm } from "../../redux/searchForm-reducer";
 import { DEFAULT_VALUES, ELEMENT_TEXT } from "../../shared/const";
 
 const SearchForm: React.FC = () => {
   const dispatch = useDispatch();
-  const [searchTerm, setSearchTerm] = useState(DEFAULT_VALUES.EMPTY);
+  
+  const searchTerm = useSelector(
+    (store: any) => store.searchForm.searchTerm
+  );
 
   const debouncedSearchTerm = useDebounce(
     searchTerm,
@@ -29,8 +33,8 @@ const SearchForm: React.FC = () => {
 
   const handleOnInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
-    
-    setSearchTerm(searchValue);
+
+    dispatch(setSearchFormTerm(searchValue))
   };
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
