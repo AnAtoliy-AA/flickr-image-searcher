@@ -1,17 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useDebounce from "../../hooks/useDebounce";
 import { getImagesByNameInfo } from "../../redux/imagesList-reducer";
 import { DEFAULT_VALUES, ELEMENT_TEXT } from "../../shared/const";
 
 const SearchForm: React.FC = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState(DEFAULT_VALUES.EMPTY);
-  const activePage = useSelector( 
-    (store: any) => store.imagesList.page
-  )
+
+  const debouncedSearchTerm = useDebounce(
+    searchTerm,
+    DEFAULT_VALUES.SEARCH_DELAY_TIME
+  );
+  const activePage = useSelector(
+    (store: any) => store.imagesList.imagesInfoList.page
+  );
+  const isLoading = useSelector(
+    (store: any) => store.imagesList.isLoading
+  );
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      dispatch(
+        getImagesByNameInfo(searchTerm, activePage || DEFAULT_VALUES.FIRST_PAGE)
+      );
+    }
+  }, [activePage, debouncedSearchTerm, dispatch, searchTerm]);
 
   const handleOnInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
+    
     setSearchTerm(searchValue);
   };
 
@@ -19,18 +37,17 @@ const SearchForm: React.FC = () => {
     e.preventDefault();
 
     if (searchTerm) {
-      dispatch(getImagesByNameInfo(searchTerm, activePage || DEFAULT_VALUES.FIRST_PAGE));
+      dispatch(
+        getImagesByNameInfo(searchTerm, activePage || DEFAULT_VALUES.FIRST_PAGE)
+      );
     }
   };
 
   return (
-    <div>
-      SearchForm Component
-      <form onSubmit={handleOnSubmit}>
-        <input value={searchTerm} onChange={handleOnInputChange}></input>
-        {/* <button type="submit">{ELEMENT_TEXT.SUBMIT}</button> */}
-      </form>
-    </div>
+    <form onSubmit={handleOnSubmit}>
+      <input value={searchTerm} onChange={handleOnInputChange}></input>
+      {isLoading && <div>Searching ...</div>}
+    </form>
   );
 };
 

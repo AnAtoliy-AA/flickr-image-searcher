@@ -1,17 +1,23 @@
+import { DEFAULT_VALUES } from "./../shared/const";
 import { imageAppApi } from "../services/image-api";
 
 enum ACTION_CONST {
   SET_IMAGES_INFO = "SET_IMAGES_INFO",
+  SET_IS_LOADING = "SET_IS_LOADING",
 }
 
 let initialState = {
-  imagesInfoList: {}
+  imagesInfoList: {},
+  isLoading: DEFAULT_VALUES.FALSE,
 };
 
 const imagesListReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ACTION_CONST.SET_IMAGES_INFO: {
-      return { ...state, imagesInfoList: action.imagesInfoList };
+      return { ...state, imagesInfoList: action.payload };
+    }
+    case ACTION_CONST.SET_IS_LOADING: {
+      return { ...state, isLoading: action.payload };
     }
     default:
       return state;
@@ -20,15 +26,24 @@ const imagesListReducer = (state = initialState, action: any) => {
 
 export const setImagesInfoData = (imagesInfoList: any) => ({
   type: ACTION_CONST.SET_IMAGES_INFO,
-  imagesInfoList,
+  payload: imagesInfoList,
 });
 
-export const getImagesByNameInfo = (imageName: string, pageNumber: number) => async (
-  dispatch: (arg0: { type: string; imagesInfoList: any }) => void
-) => {
+export const setIsLoading = (isLoading: boolean) => ({
+  type: ACTION_CONST.SET_IS_LOADING,
+  payload: isLoading,
+});
+
+export const getImagesByNameInfo = (
+  imageName: string,
+  pageNumber: number
+) => async (dispatch: (arg0: { type: string; payload: any }) => void) => {
+  dispatch(setIsLoading(DEFAULT_VALUES.TRUE));
+
   const response = await imageAppApi.getImagesByName(imageName, pageNumber);
 
-    dispatch(setImagesInfoData(response.photos));
+  dispatch(setImagesInfoData(response.photos));
+  dispatch(setIsLoading(DEFAULT_VALUES.FALSE));
 };
 
 export default imagesListReducer;
