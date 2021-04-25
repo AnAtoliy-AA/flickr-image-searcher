@@ -50,7 +50,7 @@ const Paginator: React.FC = () => {
           onClick={() => setPortionNumber(portionNumber - PREVIOUS_NUMBER)}
           startIcon={<ArrowBackIcon />}
         >
-          {ELEMENT_TEXT.PREVIOUS}
+          {ELEMENT_TEXT.BACK}
         </Button>
       )}
       {ELEMENT_TEXT.PAGE}
@@ -80,7 +80,7 @@ const Paginator: React.FC = () => {
           onClick={() => setPortionNumber(portionNumber + NEXT_NUMBER)}
           startIcon={<ArrowForwardIcon />}
         >
-          {ELEMENT_TEXT.NEXT}
+          {ELEMENT_TEXT.FORWARD}
         </Button>
       )}
     </div>

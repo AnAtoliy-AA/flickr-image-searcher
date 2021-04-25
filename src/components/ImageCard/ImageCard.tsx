@@ -1,5 +1,5 @@
 import React from "react";
-import "./ImageCard.scss";
+import { Route } from "react-router-dom";
 import {
   Button,
   Card,
@@ -9,7 +9,8 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
-import { Route } from "react-router-dom";
+import "./ImageCard.scss";
+import { ELEMENT_TEXT } from "../../shared/const";
 
 type TProps = {
   imageSrcPath: string;
@@ -17,6 +18,7 @@ type TProps = {
   handleRemoveButtonClick: any;
   imageTitle?: string;
 };
+
 const ImageCard: React.FC<TProps> = ({
   imageSrcPath,
   imageTitle,
@@ -24,16 +26,9 @@ const ImageCard: React.FC<TProps> = ({
   handleRemoveButtonClick,
 }) => {
   return (
-    <Card
-      className="ImageCard"
-      // key={imageEl.id}
-    >
+    <Card className="ImageCard">
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="180"
-          image={imageSrcPath}
-        />
+        <CardMedia component="img" height="180" image={imageSrcPath} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {imageTitle}
@@ -47,7 +42,7 @@ const ImageCard: React.FC<TProps> = ({
             color="primary"
             onClick={() => handleAddButtonClick(imageSrcPath)}
           >
-            ADD
+            {ELEMENT_TEXT.ADD_BUTTON}
           </Button>
         </Route>
         <Route exact path="/bookmarks">
@@ -56,7 +51,7 @@ const ImageCard: React.FC<TProps> = ({
             color="primary"
             onClick={() => handleRemoveButtonClick(imageSrcPath)}
           >
-            RRR
+            {ELEMENT_TEXT.REMOVE_BUTTON}
           </Button>
         </Route>
       </CardActions>

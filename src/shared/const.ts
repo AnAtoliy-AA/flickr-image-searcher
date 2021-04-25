@@ -11,7 +11,10 @@ export const DEFAULT_VALUES = {
 export const ELEMENT_TEXT = {
     SUBMIT: 'Submit',
     PREVIOUS: 'Previous',
-    NEXT: 'Next',
-    PAGE: 'page',
+    BACK: 'Back',
+    FORWARD: 'Forward',
+    PAGE: 'Page',
     OF: 'of',
+    ADD_BUTTON: 'Bookmark it!',
+    REMOVE_BUTTON: 'Remove it!',
 }
