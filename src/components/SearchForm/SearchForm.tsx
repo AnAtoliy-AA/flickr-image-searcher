@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useDebounce from "../../hooks/useDebounce";
 import { getImagesByNameInfo } from "../../redux/imagesList-reducer";
 import { setSearchFormTerm } from "../../redux/searchForm-reducer";
-import { DEFAULT_VALUES, ELEMENT_TEXT } from "../../shared/const";
+import { DEFAULT_VALUES } from "../../shared/const";
 
 const SearchForm: React.FC = () => {
   const dispatch = useDispatch();

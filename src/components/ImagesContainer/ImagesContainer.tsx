@@ -58,7 +58,7 @@ const ImagesContainer: React.FC = () => {
                 handleRemoveButtonClick={handleRemoveButtonClick}
               />
             );
-          }
+           }
         })}
       </Route>
     </div>

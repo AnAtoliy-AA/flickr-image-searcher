@@ -6,6 +6,8 @@ export const DEFAULT_VALUES = {
   SEARCH_DELAY_TIME: 500,
   PAGE_SIZE: 100,
   PAGES_PORTION: 5,
+  IDLE_DELAY_TIME: 1000 * 60 * 1,
+  IDLE_DEBOUNCE: 500,
 };
 
 export const ELEMENT_TEXT = {
@@ -17,4 +19,7 @@ export const ELEMENT_TEXT = {
     OF: 'of',
     ADD_BUTTON: 'Bookmark it!',
     REMOVE_BUTTON: 'Remove it!',
+    NOT_ACTIVE_USER: 'User is not active',
+    FOR: 'for',
+    SECONDS: 'seconds.'
 }
