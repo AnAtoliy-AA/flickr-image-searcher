@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/image-finder/static/css/main.3ad68ccb.chunk.css",
-    "main.js": "/image-finder/static/js/main.304b5812.chunk.js",
-    "main.js.map": "/image-finder/static/js/main.304b5812.chunk.js.map",
-    "runtime-main.js": "/image-finder/static/js/runtime-main.1699a241.js",
-    "runtime-main.js.map": "/image-finder/static/js/runtime-main.1699a241.js.map",
-    "static/js/2.1f6ef7f8.chunk.js": "/image-finder/static/js/2.1f6ef7f8.chunk.js",
-    "static/js/2.1f6ef7f8.chunk.js.map": "/image-finder/static/js/2.1f6ef7f8.chunk.js.map",
-    "static/js/3.19e38f8c.chunk.js": "/image-finder/static/js/3.19e38f8c.chunk.js",
-    "static/js/3.19e38f8c.chunk.js.map": "/image-finder/static/js/3.19e38f8c.chunk.js.map",
-    "index.html": "/image-finder/index.html",
-    "static/css/main.3ad68ccb.chunk.css.map": "/image-finder/static/css/main.3ad68ccb.chunk.css.map",
-    "static/js/2.1f6ef7f8.chunk.js.LICENSE.txt": "/image-finder/static/js/2.1f6ef7f8.chunk.js.LICENSE.txt"
+    "main.css": "/flickr-image-searcher/static/css/main.3ad68ccb.chunk.css",
+    "main.js": "/flickr-image-searcher/static/js/main.54d48379.chunk.js",
+    "main.js.map": "/flickr-image-searcher/static/js/main.54d48379.chunk.js.map",
+    "runtime-main.js": "/flickr-image-searcher/static/js/runtime-main.7538ec18.js",
+    "runtime-main.js.map": "/flickr-image-searcher/static/js/runtime-main.7538ec18.js.map",
+    "static/js/2.aa2b020f.chunk.js": "/flickr-image-searcher/static/js/2.aa2b020f.chunk.js",
+    "static/js/2.aa2b020f.chunk.js.map": "/flickr-image-searcher/static/js/2.aa2b020f.chunk.js.map",
+    "static/js/3.802937cb.chunk.js": "/flickr-image-searcher/static/js/3.802937cb.chunk.js",
+    "static/js/3.802937cb.chunk.js.map": "/flickr-image-searcher/static/js/3.802937cb.chunk.js.map",
+    "index.html": "/flickr-image-searcher/index.html",
+    "static/css/main.3ad68ccb.chunk.css.map": "/flickr-image-searcher/static/css/main.3ad68ccb.chunk.css.map",
+    "static/js/2.aa2b020f.chunk.js.LICENSE.txt": "/flickr-image-searcher/static/js/2.aa2b020f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1699a241.js",
-    "static/js/2.1f6ef7f8.chunk.js",
+    "static/js/runtime-main.7538ec18.js",
+    "static/js/2.aa2b020f.chunk.js",
     "static/css/main.3ad68ccb.chunk.css",
-    "static/js/main.304b5812.chunk.js"
+    "static/js/main.54d48379.chunk.js"
   ]
 }
