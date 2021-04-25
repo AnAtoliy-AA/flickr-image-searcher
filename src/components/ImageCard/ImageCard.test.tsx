@@ -1,9 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ImageCard from './ImageCard';
+import React from "react";
+import ReactDOM from "react-dom";
+import ImageCard from "./ImageCard";
+import { BrowserRouter as Router } from "react-router-dom";
 
-it('It should mount', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<ImageCard />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe("With router", () => {
+  const mockProps = {
+    imageSrcPath: "string",
+    handleAddButtonClick: () => {},
+    handleRemoveButtonClick: () => {},
+    imageTitle: "",
+  };
+
+  it("ImageCard should mount", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(
+      <Router>
+        <ImageCard {...mockProps} />
+      </Router>,
+      div
+    );
+
+    ReactDOM.unmountComponentAtNode(div);
+  });
 });
