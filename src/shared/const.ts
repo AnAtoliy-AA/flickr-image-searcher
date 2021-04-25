@@ -6,7 +6,7 @@ export const DEFAULT_VALUES = {
   SEARCH_DELAY_TIME: 500,
   PAGE_SIZE: 100,
   PAGES_PORTION: 5,
-  IDLE_DELAY_TIME: 1000 * 10 * 1,
+  IDLE_DELAY_TIME: 1000 * 60 * 1,
   IDLE_DEBOUNCE: 500,
 };
 
@@ -23,4 +23,6 @@ export const ELEMENT_TEXT = {
     FOR: 'for',
     SECONDS: 'seconds.',
     EMPTY_IMAGE_CONTAINER: 'No images here. Would you try to search for anything else?',
+    APP_NAME: 'Image Finder',
+    COPYRIGHTS: 'Copyrights',
 }
