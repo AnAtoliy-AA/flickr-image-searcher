@@ -7,7 +7,13 @@ enum ACTION_CONST {
 }
 
 let initialState = {
-  imagesInfoList: {},
+  imagesInfoList: {
+    page: 0,
+    pages: 0,
+    perpage: 0,
+    total: "0",
+    photo: [],
+  },
   isLoading: DEFAULT_VALUES.FALSE,
 };
 
@@ -38,12 +44,14 @@ export const getImagesByNameInfo = (
   imageName: string,
   pageNumber: number
 ) => async (dispatch: (arg0: { type: string; payload: any }) => void) => {
-  dispatch(setIsLoading(DEFAULT_VALUES.TRUE));
+  if (imageName) {
+    dispatch(setIsLoading(DEFAULT_VALUES.TRUE));
 
-  const response = await imageAppApi.getImagesByName(imageName, pageNumber);
+    const response = await imageAppApi.getImagesByName(imageName, pageNumber);
 
-  dispatch(setImagesInfoData(response.photos));
-  dispatch(setIsLoading(DEFAULT_VALUES.FALSE));
+    dispatch(setImagesInfoData(response.photos));
+    dispatch(setIsLoading(DEFAULT_VALUES.FALSE));
+  } else dispatch(setImagesInfoData(initialState.imagesInfoList));
 };
 
 export default imagesListReducer;
