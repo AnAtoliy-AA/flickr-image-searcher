@@ -1,1 +1,9 @@
-.Header {}
+@import "../../styles/index.scss";
+.Header {
+    grid-area: header;
+    // height: 10vh;
+    // position: fixed;
+    // width: 100vw;
+    background-color: $primary-color;
+    z-index: 100;
+}

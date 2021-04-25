@@ -26,3 +26,6 @@ export const ELEMENT_TEXT = {
     APP_NAME: 'Image Finder',
     COPYRIGHTS: 'Copyrights',
 }
+
+export const ROUTE_NAMES_MAIN = 'main';
+export const ROUTE_NAMES_BOOKMARKS = 'bookmarks';

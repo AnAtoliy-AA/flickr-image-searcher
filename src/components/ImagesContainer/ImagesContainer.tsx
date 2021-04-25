@@ -6,7 +6,7 @@ import { addBookmark, removeBookmark } from "../../redux/bookmarks-reducer";
 import { Route } from "react-router-dom";
 import ImageCard from "../ImageCard/ImageCard";
 import { IImageData } from "../../shared/interfaces";
-import { ELEMENT_TEXT } from "../../shared/const";
+import { ELEMENT_TEXT, ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "../../shared/const";
 
 const ImagesContainer: React.FC = () => {
   const imagesData = useSelector(
@@ -28,7 +28,7 @@ const ImagesContainer: React.FC = () => {
 
   return (
     <div className="ImagesContainer">
-      <Route exact path="/">
+      <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
         {imagesData.page
           ? imagesData.photo.map((imageEl: IImageData) => {
             //TODO
@@ -48,7 +48,7 @@ const ImagesContainer: React.FC = () => {
             })
           : `${ELEMENT_TEXT.EMPTY_IMAGE_CONTAINER}`}
       </Route>
-      <Route exact path="/bookmarks">
+      <Route exact path={`/${ROUTE_NAMES_BOOKMARKS}`}>
         {bookmarksList.map((imageElSrc: string):JSX.Element | undefined => {
           if (imageElSrc) {
             return (

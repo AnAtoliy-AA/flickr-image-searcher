@@ -1,4 +1,7 @@
 .ImagesContainer {
+    height: 70vh;
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
+    margin: 1vh 5vw;
 }

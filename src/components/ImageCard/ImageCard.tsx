@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import "./ImageCard.scss";
-import { ELEMENT_TEXT } from "../../shared/const";
+import { ELEMENT_TEXT, ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "../../shared/const";
 
 type TProps = {
   imageSrcPath: string;
@@ -36,7 +36,7 @@ const ImageCard: React.FC<TProps> = ({
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Route exact path="/">
+        <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
           <Button
             size="small"
             color="primary"
@@ -45,7 +45,7 @@ const ImageCard: React.FC<TProps> = ({
             {ELEMENT_TEXT.ADD_BUTTON}
           </Button>
         </Route>
-        <Route exact path="/bookmarks">
+        <Route exact path={`/${ROUTE_NAMES_BOOKMARKS}`}>
           <Button
             size="small"
             color="primary"

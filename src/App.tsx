@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "./App.css";
-import { HashRouter, Route } from "react-router-dom";
+import "./App.scss";
+import { BrowserRouter, HashRouter, Route } from "react-router-dom";
 import { useIdleTimer } from 'react-idle-timer'
-import SearchForm from "./components/SearchForm/SearchForm";
 import MainPage from "./components/MainPage/MainPage";
 import BookmarksPage from "./components/BookmarksPage/BookmarksPage";
 import SideBar from "./components/SideBar/SideBar";
-import { DEFAULT_VALUES } from "./shared/const";
+import { DEFAULT_VALUES, ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "./shared/const";
 import IdleMask from "./components/IdleMask/IdleMask";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isIdle, setIsIdle] = useState(DEFAULT_VALUES.FALSE);
@@ -32,16 +33,17 @@ function App() {
   return (
     <div className="App">
       {isIdle && <IdleMask />}
-      <HashRouter>
-        <SearchForm />
+      <BrowserRouter>
+        <Header />
         <SideBar />
-        <Route exact path="/">
+        <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
           <MainPage />
         </Route>
-        <Route exact path="/bookmarks">
+        <Route exact path={`/${ROUTE_NAMES_BOOKMARKS}`}>
           <BookmarksPage />
         </Route>
-      </HashRouter>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

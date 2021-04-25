@@ -1,1 +1,17 @@
-.SideBar {}
+@import "../../styles/index.scss";
+.SideBar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+
+    .Nav {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .NavLink {
+        min-height: 10vh;
+    }
+}

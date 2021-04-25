@@ -4,6 +4,7 @@ import useDebounce from "../../hooks/useDebounce";
 import { getImagesByNameInfo } from "../../redux/imagesList-reducer";
 import { setSearchFormTerm } from "../../redux/searchForm-reducer";
 import { DEFAULT_VALUES } from "../../shared/const";
+import "./SearchForm.scss";
 
 const SearchForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -48,8 +49,8 @@ const SearchForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
-      <input value={searchTerm} onChange={handleOnInputChange}></input>
+    <form className='SearchForm' onSubmit={handleOnSubmit}>
+      <input className='SearchInput' value={searchTerm} onChange={handleOnInputChange}></input>
       {isLoading && <div>Searching ...</div>}
     </form>
   );

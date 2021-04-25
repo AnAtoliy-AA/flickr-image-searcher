@@ -1,1 +1,10 @@
-.Footer {}
+@import "../../styles/index.scss";
+.Footer {
+    grid-area: footer;
+    // height: 10vh;
+    // position: fixed;
+    // top: 90vh;
+    // width: 100vw;
+    background-color: $primary-color;
+    z-index: 100;
+}
