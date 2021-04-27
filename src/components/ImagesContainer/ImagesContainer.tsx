@@ -18,8 +18,8 @@ const ImagesContainer: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddButtonClick = (imageSrcPath: string) => {
-    dispatch(addBookmark(imageSrcPath));
+  const handleAddButtonClick = (imageSrcPath: string, imageTitle: string, tagInputValue: string) => {
+    dispatch(addBookmark(imageSrcPath, imageTitle, tagInputValue));
   };
 
   const handleRemoveButtonClick = (imageSrcPath: string) => {
@@ -49,12 +49,14 @@ const ImagesContainer: React.FC = () => {
           : `${ELEMENT_TEXT.EMPTY_IMAGE_CONTAINER}`}
       </Route>
       <Route exact path={`/${ROUTE_NAMES_BOOKMARKS}`}>
-        {bookmarksList.map((imageElSrc: string):JSX.Element | undefined => {
-          if (imageElSrc) {
+        {bookmarksList.map((imageEl: any):JSX.Element | undefined => {
+          if (imageEl) {
             return (
               <ImageCard
-                key={imageElSrc}
-                imageSrcPath={imageElSrc}
+                key={imageEl}
+                imageSrcPath={imageEl.bookmark}
+                imageTitle={imageEl.imageTitle}
+                userTags={imageEl.tagValue}
                 handleAddButtonClick={handleAddButtonClick}
                 handleRemoveButtonClick={handleRemoveButtonClick}
               />

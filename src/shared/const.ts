@@ -29,6 +29,7 @@ export const ELEMENT_TEXT = {
   COPYRIGHTS: "© Copyrights",
   AUTHORIZED: "You have been authorized as ",
   NOT_AUTHORIZED: "You are not authorized",
+  WRITE_TAGS: 'some tags?'
 };
 
 export const ROUTE_NAMES_MAIN = "main";

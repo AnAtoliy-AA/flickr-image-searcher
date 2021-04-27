@@ -1,7 +1,7 @@
 @import "../../styles/index.scss";
 .Header {
     grid-area: header;
-    background-color: $primary-color;
+    background: $primary-color;
     z-index: 100;
     display: flex;
     justify-content: space-around;
