@@ -8,6 +8,7 @@ export const DEFAULT_VALUES = {
   PAGES_PORTION: 5,
   IDLE_DELAY_TIME: 1000 * 60 * 1,
   IDLE_DEBOUNCE: 500,
+  ZERO: 0,
 };
 
 export const ELEMENT_TEXT = {

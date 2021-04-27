@@ -9,6 +9,7 @@ describe("With react-redux Provider", () => {
     searchForm: { searchTerm: "" },
     imagesList: { imagesInfoList: {}, isLoading: false },
     bookmarks: { bookmarksList: [] },
+    auth: { userData: {profileObj: {name: ''}}}
   };
 
   const mockStore = configureStore();

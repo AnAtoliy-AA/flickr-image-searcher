@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { BrowserRouter, HashRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import { useIdleTimer } from 'react-idle-timer'
 import MainPage from "./components/MainPage/MainPage";
 import BookmarksPage from "./components/BookmarksPage/BookmarksPage";
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       {isIdle && <IdleMask />}
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <SideBar />
         <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
@@ -43,7 +43,7 @@ function App() {
           <BookmarksPage />
         </Route>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

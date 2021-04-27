@@ -12,9 +12,7 @@ const NEXT_NUMBER = 1;
 
 const Paginator: React.FC = () => {
   const dispatch = useDispatch();
-  const searchTerm = useSelector(
-    (store: any) => store.searchForm.searchTerm
-  );
+  const searchTerm = useSelector((store: any) => store.searchForm.searchTerm);
   const activePage = useSelector(
     (store: any) => store.imagesList.imagesInfoList.page
   );
@@ -25,19 +23,19 @@ const Paginator: React.FC = () => {
   const pages = [];
 
   for (let i = 1; i <= allPagesCount; i++) {
-      pages.push(i);
+    pages.push(i);
   }
 
   const [portionNumber, setPortionNumber] = useState(1);
 
   const portionCount = Math.ceil(allPagesCount / DEFAULT_VALUES.PAGES_PORTION);
-  const leftPortionPageNumber = (portionNumber - PREVIOUS_NUMBER) * DEFAULT_VALUES.PAGES_PORTION + NEXT_NUMBER;
+  const leftPortionPageNumber =
+    (portionNumber - PREVIOUS_NUMBER) * DEFAULT_VALUES.PAGES_PORTION +
+    NEXT_NUMBER;
   const rightPortionPageNumber = portionNumber * DEFAULT_VALUES.PAGES_PORTION;
 
   const onPageChanged = (page: number): void => {
-      dispatch(
-        getImagesByNameInfo(searchTerm, page)
-      );
+    dispatch(getImagesByNameInfo(searchTerm, page));
   };
 
   return (
@@ -53,7 +51,7 @@ const Paginator: React.FC = () => {
           {ELEMENT_TEXT.BACK}
         </Button>
       )}
-      {ELEMENT_TEXT.PAGE}
+      {activePage !== DEFAULT_VALUES.ZERO && ELEMENT_TEXT.PAGE}
       {pages
         .filter(
           (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
@@ -71,7 +69,12 @@ const Paginator: React.FC = () => {
             </span>
           );
         })}
-      <span> {ELEMENT_TEXT.OF} {allPagesCount}</span>
+      {activePage !== DEFAULT_VALUES.ZERO && (
+        <span>
+          {" "}
+          {ELEMENT_TEXT.OF} {allPagesCount}
+        </span>
+      )}
       {portionCount > portionNumber && (
         <Button
           variant="contained"
