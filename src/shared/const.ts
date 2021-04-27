@@ -12,21 +12,24 @@ export const DEFAULT_VALUES = {
 };
 
 export const ELEMENT_TEXT = {
-    SUBMIT: 'Submit',
-    PREVIOUS: 'Previous',
-    BACK: 'Back',
-    FORWARD: 'Forward',
-    PAGE: 'Page',
-    OF: 'of',
-    ADD_BUTTON: 'Bookmark it!',
-    REMOVE_BUTTON: 'Remove it!',
-    NOT_ACTIVE_USER: 'User is not active',
-    FOR: 'for',
-    SECONDS: 'seconds.',
-    EMPTY_IMAGE_CONTAINER: 'No images here. Would you try to search for anything else?',
-    APP_NAME: 'Image Finder',
-    COPYRIGHTS: 'Copyrights',
-}
+  SUBMIT: "Submit",
+  PREVIOUS: "Previous",
+  BACK: "Back",
+  FORWARD: "Forward",
+  PAGE: "Page",
+  OF: "of",
+  ADD_BUTTON: "Bookmark it!",
+  REMOVE_BUTTON: "Remove it!",
+  NOT_ACTIVE_USER: "User is not active",
+  FOR: "for",
+  SECONDS: "seconds.",
+  EMPTY_IMAGE_CONTAINER:
+    "No images here. Would you try to search for anything else?",
+  APP_NAME: "Image Finder",
+  COPYRIGHTS: "© Copyrights",
+  AUTHORIZED: "You have been authorized as ",
+  NOT_AUTHORIZED: "You are not authorized",
+};
 
-export const ROUTE_NAMES_MAIN = 'main';
-export const ROUTE_NAMES_BOOKMARKS = 'bookmarks';
+export const ROUTE_NAMES_MAIN = "main";
+export const ROUTE_NAMES_BOOKMARKS = "bookmarks";

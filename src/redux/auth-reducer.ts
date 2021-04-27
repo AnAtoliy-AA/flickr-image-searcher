@@ -64,6 +64,7 @@ const authReducer = (
     case ACTION_CONST.SET_DEFAULT_VALUES: {
       return {
         ...state,
+        userData: initialState.userData,
         isAuthorized: DEFAULT_VALUES.FALSE,
         token: DEFAULT_VALUES.EMPTY,
       };

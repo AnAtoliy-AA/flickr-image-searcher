@@ -9,14 +9,18 @@ import { DEFAULT_VALUES, ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "./share
 import IdleMask from "./components/IdleMask/IdleMask";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { useDispatch } from "react-redux";
+import { logout } from "./redux/auth-reducer";
 
 function App() {
+  const dispatch = useDispatch();
   const [isIdle, setIsIdle] = useState(DEFAULT_VALUES.FALSE);
   
   const handleOnIdle = () => {
     //TODO Last user usage
     // console.log('last active', getLastActiveTime())
     setIsIdle(DEFAULT_VALUES.TRUE);
+    dispatch(logout());
   }
 
   const handleOnActive = () => {

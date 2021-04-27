@@ -1,40 +1,27 @@
-import React from 'react';
-import { ELEMENT_TEXT } from '../../shared/const';
-import './Header.scss';
-import { GoogleLogin } from 'react-google-login';
-import { useDispatch, useSelector } from 'react-redux';
-import { setAuthFailure, setUserData } from '../../redux/auth-reducer';
-import { GOOGLE_API_KEY } from '../../api-keys/api-keys';
+import React from "react";
+import { ELEMENT_TEXT } from "../../shared/const";
+import "./Header.scss";
+import { useSelector } from "react-redux";
+import Login from "../Login/Login";
+import Logout from "../Logout/Logout";
 
 const Header: React.FC = () => {
-  const dispatch = useDispatch();
-  const userName = useSelector((store: any) => store.auth.userData.profileObj.name)
-
-  const successGoogle = (response: any) => {
-    dispatch(setUserData(response));
-    console.log(response);
-  }
-
-  const failureGoogle = (authFailureMessage: any) => {
-    dispatch(setAuthFailure(authFailureMessage));
-  }
+  const userName = useSelector(
+    (store: any) => store.auth.userData.profileObj.name
+  );
+  const isAuthorized = useSelector((store: any) => store.auth.isAuthorized);
 
   return (
-  <div className="Header">
-    {ELEMENT_TEXT.APP_NAME}
-    {userName}
-    <GoogleLogin
-    clientId={GOOGLE_API_KEY}
-    render={renderProps => (
-      <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Google auth</button>
-    )}
-    buttonText="Login"
-    onSuccess={successGoogle}
-    onFailure={failureGoogle}
-    cookiePolicy={'single_host_origin'}
-  />,
-  </div>
-)
-    };
+    <div className="Header">
+      <h1>{ELEMENT_TEXT.APP_NAME}</h1>
+      <>
+        {isAuthorized
+          ? `${ELEMENT_TEXT.AUTHORIZED} ${userName}`
+          : ELEMENT_TEXT.NOT_AUTHORIZED}
+      </>
+      {!isAuthorized ? <Login /> : <Logout />}
+    </div>
+  );
+};
 
 export default Header;
