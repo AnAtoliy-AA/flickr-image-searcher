@@ -70,10 +70,10 @@ const Paginator: React.FC = () => {
           );
         })}
       {activePage !== DEFAULT_VALUES.ZERO && (
-        <span>
-          {" "}
-          {ELEMENT_TEXT.OF} {allPagesCount}
-        </span>
+        <>
+          <span> {ELEMENT_TEXT.OF} </span>
+          <span>{allPagesCount} </span>
+        </>
       )}
       {portionCount > portionNumber && (
         <Button

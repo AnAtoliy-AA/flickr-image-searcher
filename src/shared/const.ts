@@ -3,7 +3,7 @@ export const DEFAULT_VALUES = {
   EMPTY: "",
   TRUE: true,
   FALSE: false,
-  SEARCH_DELAY_TIME: 500,
+  SEARCH_DELAY_TIME: 1000,
   PAGE_SIZE: 100,
   PAGES_PORTION: 5,
   IDLE_DELAY_TIME: 1000 * 60 * 1,

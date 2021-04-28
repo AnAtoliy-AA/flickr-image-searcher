@@ -7,6 +7,7 @@ import { Route } from "react-router-dom";
 import ImageCard from "../ImageCard/ImageCard";
 import { IImageData } from "../../shared/interfaces";
 import { ELEMENT_TEXT, ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "../../shared/const";
+import Loader from "../Loader/Loader";
 
 const ImagesContainer: React.FC = () => {
   const imagesData = useSelector(
@@ -14,6 +15,9 @@ const ImagesContainer: React.FC = () => {
   );
   const bookmarksList = useSelector(
     (store: any) => Object.values(store.bookmarks.bookmarksList)
+  );
+  const isLoading = useSelector(
+    (store: any) => store.imagesList.isLoading
   );
 
   const dispatch = useDispatch();
@@ -28,6 +32,7 @@ const ImagesContainer: React.FC = () => {
 
   return (
     <div className="ImagesContainer">
+      {isLoading && <Loader />}
       <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
         {imagesData.page
           ? imagesData.photo.map((imageEl: IImageData) => {
