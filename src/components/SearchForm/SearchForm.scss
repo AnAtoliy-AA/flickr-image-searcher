@@ -1,0 +1,11 @@
+@import "../../styles/index.scss";
+
+.SearchForm {
+    margin: 2vh auto;
+    min-height: 8vh;
+
+    .SearchInput {
+        width: 80vw;
+        font-size: 1.5rem;
+    }
+}

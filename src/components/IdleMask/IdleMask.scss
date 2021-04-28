@@ -1,0 +1,17 @@
+@import "../../styles/index.scss";
+.IdleMask {
+    background-color: $mask-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 4rem;
+    color: #f00;
+    text-align: center;
+    z-index: 1000;
+}

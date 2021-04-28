@@ -1,0 +1,10 @@
+.Paginator {
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh 5vw;
+
+    .selected-page {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+}

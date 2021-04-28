@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'sidebar page '
+    'footer footer';
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 1fr 9fr;
+    width: 100vw;
+    height: 100vh;
+}

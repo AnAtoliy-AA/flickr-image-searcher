@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import SearchForm from "./SearchForm";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 
@@ -9,18 +9,17 @@ describe("With react-redux Provider", () => {
     searchForm: { searchTerm: "" },
     imagesList: { imagesInfoList: {}, isLoading: false },
     bookmarks: { bookmarksList: [] },
-    auth: { userData: {profileObj: {name: ''}}}
   };
 
   const mockStore = configureStore();
   let store;
 
-  it("App should mount", () => {
+  it("SearchForm should mount", () => {
     store = mockStore(initialState);
     const div = document.createElement("div");
     ReactDOM.render(
       <Provider store={store}>
-        <App />
+        <SearchForm />
       </Provider>,
       div
     );
