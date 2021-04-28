@@ -13,7 +13,7 @@ const ImagesContainer: React.FC = () => {
     (store: any) => store.imagesList.imagesInfoList
   );
   const bookmarksList = useSelector(
-    (store: any) => store.bookmarks.bookmarksList
+    (store: any) => Object.values(store.bookmarks.bookmarksList)
   );
 
   const dispatch = useDispatch();

@@ -4,24 +4,27 @@ enum ACTION_TYPE {
 }
 
 let initialState = {
-  bookmarksList: [String],
+  bookmarksList: {},
 };
 
 const bookmarksReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ACTION_TYPE.ADD_BOOKMARK: {
-      if (state.bookmarksList.includes(action.payload)) {
-        return state;
-      } else
+     const assignedBookmarksList = Object.assign(state.bookmarksList);
+     assignedBookmarksList[action.payload.bookmark] = action.payload;
+
         return {
           ...state,
-          bookmarksList: [...state.bookmarksList, action.payload],
+          bookmarksList: assignedBookmarksList,
         };
     }
     case ACTION_TYPE.REMOVE_BOOKMARK: {
+      const assignedBookmarksList = Object.assign(state.bookmarksList);
+      delete assignedBookmarksList[action.payload];
+
       return {
         ...state,
-        bookmarksList: state.bookmarksList.filter((b) => b !== action.payload),
+        bookmarksList: assignedBookmarksList,
       };
     }
     default:
