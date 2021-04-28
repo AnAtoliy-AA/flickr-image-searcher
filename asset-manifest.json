@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/flickr-image-searcher/static/css/main.8ea1deee.chunk.css",
-    "main.js": "/flickr-image-searcher/static/js/main.377aa172.chunk.js",
-    "main.js.map": "/flickr-image-searcher/static/js/main.377aa172.chunk.js.map",
-    "runtime-main.js": "/flickr-image-searcher/static/js/runtime-main.2fc8b48c.js",
-    "runtime-main.js.map": "/flickr-image-searcher/static/js/runtime-main.2fc8b48c.js.map",
-    "static/js/2.0f400112.chunk.js": "/flickr-image-searcher/static/js/2.0f400112.chunk.js",
-    "static/js/2.0f400112.chunk.js.map": "/flickr-image-searcher/static/js/2.0f400112.chunk.js.map",
-    "static/js/3.c32a87d9.chunk.js": "/flickr-image-searcher/static/js/3.c32a87d9.chunk.js",
-    "static/js/3.c32a87d9.chunk.js.map": "/flickr-image-searcher/static/js/3.c32a87d9.chunk.js.map",
+    "main.css": "/flickr-image-searcher/static/css/main.b4c596ba.chunk.css",
+    "main.js": "/flickr-image-searcher/static/js/main.41bd3482.chunk.js",
+    "main.js.map": "/flickr-image-searcher/static/js/main.41bd3482.chunk.js.map",
+    "runtime-main.js": "/flickr-image-searcher/static/js/runtime-main.cb446680.js",
+    "runtime-main.js.map": "/flickr-image-searcher/static/js/runtime-main.cb446680.js.map",
+    "static/js/2.dd9623bb.chunk.js": "/flickr-image-searcher/static/js/2.dd9623bb.chunk.js",
+    "static/js/2.dd9623bb.chunk.js.map": "/flickr-image-searcher/static/js/2.dd9623bb.chunk.js.map",
+    "static/js/3.b173c22a.chunk.js": "/flickr-image-searcher/static/js/3.b173c22a.chunk.js",
+    "static/js/3.b173c22a.chunk.js.map": "/flickr-image-searcher/static/js/3.b173c22a.chunk.js.map",
     "index.html": "/flickr-image-searcher/index.html",
-    "static/css/main.8ea1deee.chunk.css.map": "/flickr-image-searcher/static/css/main.8ea1deee.chunk.css.map",
-    "static/js/2.0f400112.chunk.js.LICENSE.txt": "/flickr-image-searcher/static/js/2.0f400112.chunk.js.LICENSE.txt"
+    "static/css/main.b4c596ba.chunk.css.map": "/flickr-image-searcher/static/css/main.b4c596ba.chunk.css.map",
+    "static/js/2.dd9623bb.chunk.js.LICENSE.txt": "/flickr-image-searcher/static/js/2.dd9623bb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2fc8b48c.js",
-    "static/js/2.0f400112.chunk.js",
-    "static/css/main.8ea1deee.chunk.css",
-    "static/js/main.377aa172.chunk.js"
+    "static/js/runtime-main.cb446680.js",
+    "static/js/2.dd9623bb.chunk.js",
+    "static/css/main.b4c596ba.chunk.css",
+    "static/js/main.41bd3482.chunk.js"
   ]
 }
