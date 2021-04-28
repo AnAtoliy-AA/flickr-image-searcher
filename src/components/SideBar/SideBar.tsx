@@ -7,7 +7,7 @@ import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import { ROUTE_NAMES_BOOKMARKS, ROUTE_NAMES_MAIN } from "../../shared/const";
 
 const SideBar: React.FC = () => {
-  const [value, setValue] = React.useState('main');
+  const [value, setValue] = React.useState("main");
 
   const handleChange = (event: any, newValue: React.SetStateAction<string>) => {
     setValue(newValue);

@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Header from './Header';
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./Header";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -10,7 +10,7 @@ describe("With react-redux Provider", () => {
     searchForm: { searchTerm: "" },
     imagesList: { imagesInfoList: {}, isLoading: false },
     bookmarks: { bookmarksList: [] },
-    auth: { userData: {profileObj: {name: ''}}},
+    auth: { userData: { profileObj: { name: "" } } },
   };
 
   const mockStore = configureStore();

@@ -36,7 +36,6 @@ const ImagesContainer: React.FC = () => {
       <Route exact path={`/${ROUTE_NAMES_MAIN}`}>
         {imagesData.page
           ? imagesData.photo.map((imageEl: IImageData) => {
-            //TODO
               const imageSrcPath = `https://farm${imageEl.farm}.staticflickr.com/${imageEl.server}/${imageEl.id}_${imageEl.secret}.jpg`;
 
               if (imageSrcPath) {

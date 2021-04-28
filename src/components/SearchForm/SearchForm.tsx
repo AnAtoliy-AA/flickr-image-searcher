@@ -8,10 +8,8 @@ import "./SearchForm.scss";
 
 const SearchForm: React.FC = () => {
   const dispatch = useDispatch();
-  
-  const searchTerm = useSelector(
-    (store: any) => store.searchForm.searchTerm
-  );
+
+  const searchTerm = useSelector((store: any) => store.searchForm.searchTerm);
 
   const debouncedSearchTerm = useDebounce(
     searchTerm,
@@ -20,9 +18,7 @@ const SearchForm: React.FC = () => {
   const activePage = useSelector(
     (store: any) => store.imagesList.imagesInfoList.page
   );
-  const isLoading = useSelector(
-    (store: any) => store.imagesList.isLoading
-  );
+  const isLoading = useSelector((store: any) => store.imagesList.isLoading);
 
   useEffect(() => {
     if (debouncedSearchTerm) {
@@ -35,7 +31,7 @@ const SearchForm: React.FC = () => {
   const handleOnInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
 
-    dispatch(setSearchFormTerm(searchValue))
+    dispatch(setSearchFormTerm(searchValue));
   };
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -49,8 +45,12 @@ const SearchForm: React.FC = () => {
   };
 
   return (
-    <form className='SearchForm' onSubmit={handleOnSubmit}>
-      <input className='SearchInput' value={searchTerm} onChange={handleOnInputChange}></input>
+    <form className="SearchForm" onSubmit={handleOnSubmit}>
+      <input
+        className="SearchInput"
+        value={searchTerm}
+        onChange={handleOnInputChange}
+      ></input>
       {isLoading && <div>Searching ...</div>}
     </form>
   );
